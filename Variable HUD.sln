@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32630.192
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Variable HUD", "Variable HUD.csproj", "{74B7253B-7761-422D-A445-A2935064C091}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{74B7253B-7761-422D-A445-A2935064C091}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74B7253B-7761-422D-A445-A2935064C091}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74B7253B-7761-422D-A445-A2935064C091}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74B7253B-7761-422D-A445-A2935064C091}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C61650EE-590B-47D5-BE55-A714F76A185A}
+	EndGlobalSection
+EndGlobal
