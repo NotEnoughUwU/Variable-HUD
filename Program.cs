@@ -84,7 +84,8 @@ namespace Variable_HUD
         static void HitByEnemy()
         {
             Console.WriteLine(name + " was hit by an enemy!");
-            int damageTaken = 25;
+            Random rnd = new Random();
+            int damageTaken = rnd.Next(23,31);
             Console.WriteLine(name + " took " + damageTaken + " damage!");
             health -= damageTaken;
 
