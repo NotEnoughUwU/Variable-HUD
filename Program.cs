@@ -28,8 +28,50 @@ namespace Variable_HUD
             level = 1;
             killcount = 0;
 
-            DisplayHud();
-            Console.ReadKey(true);
+            while (true)
+            {
+                DisplayHud();
+                Console.ReadKey(true);
+
+
+
+                Random rnd = new Random();
+                int eventDecider = rnd.Next(9);
+
+
+                switch (eventDecider)
+                {
+                    case 0:
+                    case 1:
+                    case 2:
+                    case 3:
+                        HitByEnemy();
+                        break;
+                    case 4:
+                        ExtraLife();
+                        break;
+                    case 5:
+                    case 6:
+                        KillEnemy();
+                        break;
+                    case 7:
+                    case 8:
+                        IncreaseMultiplier();
+                        break;
+                }
+
+                multiplier = (float)Math.Round(multiplier, 1);
+
+                if (lives == 0)
+                {
+                    Console.ReadKey(true);
+                    DisplayHud();
+                    GameOver();
+                    break;
+                }
+
+                Console.ReadKey(true);
+            }
         }
         static void DisplayHud()
         {
@@ -56,6 +98,7 @@ namespace Variable_HUD
                 }
                 else
                 {
+                    Console.WriteLine(name + " lost a life!");
                     health = 100;
                 }
             }
@@ -74,6 +117,19 @@ namespace Variable_HUD
             Console.WriteLine(name + " killed an enemy and gained " + pointsGainedInt + " points!");
             score += pointsGainedInt;
             killcount++;
+
+            Random rnd = new Random();
+            int eventDecider = rnd.Next(3);
+            if (eventDecider == 0)
+            {
+                Console.WriteLine("The enemy dropped an item!");
+                IncreaseMultiplier();
+            }
+
+            if (killcount % 5 == 0)
+            {
+                NextLevel();
+            }
         }
         static void IncreaseMultiplier()
         {
@@ -81,6 +137,21 @@ namespace Variable_HUD
 
             Console.WriteLine(name + " picked up an item, increasing their multiplier by " + multiplierIncrease + "!");
             multiplier += multiplierIncrease;
+        }
+        static void GameOver()
+        {
+            Console.WriteLine(name + " died!");
+            Console.WriteLine("GAME OVER");
+            Console.ReadKey(true);
+        }
+        static void NextLevel()
+        {
+            level++;
+            Console.WriteLine(name + " reached level " + level + "!");
+
+            float multiplierIncrease = (float)level;
+            multiplier += multiplierIncrease;
+            Console.WriteLine("Multiplier increased by the current level (" + level + ")");
         }
     }
 }
